@@ -2,9 +2,6 @@
 <html>
 
 <head>
-    @extends('layouts.app')
-
-    @section('content')
     <title>
     </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap
@@ -94,7 +91,6 @@ js" integrity="sha384-
 ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="an
 onymous"></script>
 
-    @endsection
-</body>
 
+</body>
 </html>
