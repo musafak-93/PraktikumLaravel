@@ -21,3 +21,5 @@ Auth::routes();
 
 Route::get('/mahasiswa', [App\Http\Controllers\MahasiswaController::class, 'index'])->name('mahasiswa');
 Route::post('/mahasiswa/create',[\App\Http\Controllers\MahasiswaController::class,'create'])->name('mahasiswa');
+Route::get('/mahasiswa/{id}/edit',[\App\Http\Controllers\MahasiswaController::class, 'edit']) ->name('mahasiswa');
+Route::post('/mahasiswa/{id}/update', [\App\Http\Controllers\MahasiswaController::class, 'update'])->name('mahasiswa');
