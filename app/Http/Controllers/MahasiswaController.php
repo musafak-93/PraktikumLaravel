@@ -6,9 +6,17 @@ use Illuminate\Http\Request;
 
 class MahasiswaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $data_mahasiswa = \App\Models\Mahasiswa::all();
+        if($request -> has('cari'))
+        {
+            $data_mahasiswa = \App\Models\Mahasiswa::where('nama','LIKE','%'.$request->cari.'%')->orwhere('nim',
+            'LIKE', '%'.$request->cari.'%')->orwhere('alamat','LIKE','%'.$request->cari.'%')->get();
+        }
+        else
+        {
+            $data_mahasiswa = \App\Models\Mahasiswa::all();
+        }
         return view('mahasiswa.index',['data_mahasiswa' => $data_mahasiswa]);
     }
 

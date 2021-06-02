@@ -25,30 +25,35 @@
                 <button type="button" class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#exampleModal">
                     Tambah Data
                 </button>
+                <form class="form-inline my-2 my-lg-0" method="GET" action="/mahasiswa">
+                    <input name="cari" class="form-control w-75 mr-sm-2" id="search" placeholder="Cari">
+                    <button type="submit" class="btn btn-outline-secondary my-2 my-sm-0">Cari</button>
+                </form>
             </div>
-
-            <table class="table table-hover">
-                <tr>
-                    <th>NAMA</th>
-                    <th>NIM</th>
-                    <th>ALAMAT</th>
-                    <th>AKSI</th>
-                </tr>
-                @foreach($data_mahasiswa as $mahasiswa)
-                <tr>
-                    <td>{{$mahasiswa->nama}}</td>
-                    <td>{{$mahasiswa->nim}}</td>
-                    <td>{{$mahasiswa->alamat}}</td>
-                    <td>
-                        <a href="/mahasiswa/{{$mahasiswa->id}}/edit" class="btn btn-warning btn-sm">Edit</a>
-                        <a href="/mahasiswa/delete/{{$mahasiswa->id}}" class="btn btn-danger btn-sm" onclick="return confirm('Yakin Ingin Dihapus???')">Delete</a>
-                    </td>
-
-                </tr>
-                @endforeach
-            </table>
-            {{-- {{$data_mahasiswa->links('pagination::bootstrap-4')}} --}}
         </div>
+
+        <table class="table table-hover">
+            <tr>
+                <th>NAMA</th>
+                <th>NIM</th>
+                <th>ALAMAT</th>
+                <th>AKSI</th>
+            </tr>
+            @foreach($data_mahasiswa as $mahasiswa)
+            <tr>
+                <td>{{$mahasiswa->nama}}</td>
+                <td>{{$mahasiswa->nim}}</td>
+                <td>{{$mahasiswa->alamat}}</td>
+                <td>
+                    <a href="/mahasiswa/{{$mahasiswa->id}}/edit" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="/mahasiswa/delete/{{$mahasiswa->id}}" class="btn btn-danger btn-sm" onclick="return confirm('Yakin Ingin Dihapus???')">Delete</a>
+                </td>
+
+            </tr>
+            @endforeach
+        </table>
+        {{-- {{$data_mahasiswa->links('pagination::bootstrap-4')}} --}}
+    </div>
 
     </div>
     <!-- Modal -->
